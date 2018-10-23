@@ -72,8 +72,9 @@ export default class Context {
    */
   public autoLoadCallback(err: any) : void {
     Object.keys(this.database.models()).forEach((key) => {
-      console.log(123);
-      console.log(key);
+      if(this.loki.getCollection(key) === null) {
+        this.loki.addCollection(key);
+      }
     });
   };
 
@@ -85,8 +86,8 @@ export default class Context {
    */
   public static setup (components: Components, database: Database, options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>) : Context {
     this.instance = new Context(components, database, options);
-    this.instance.loki.addCollection('testCollection');
-    this.instance.loki.saveDatabase((x) => { console.log('im a callback') });
+    // this.instance.loki.addCollection('testCollection');
+    // this.instance.loki.saveDatabase((x) => { console.log('im a callback') });
     // console.log(this.instance.loki.getCollection('testCollection'));
     // console.log('<!----------------------->');
     // console.log(this.instance.loki.getCollection('users'));
