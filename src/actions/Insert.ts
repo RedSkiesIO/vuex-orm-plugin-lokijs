@@ -17,8 +17,10 @@ export default class Insert extends Action {
   public static async call (state: any, dispatch: any) {
     const context = Context.getInstance();
     console.trace();
+    console.log('<!---------------->');
     console.log(state);
     console.log(dispatch);
+    console.log('<!---------------->');
     // context.loki.insert({ lol: true });
     // const model = this.getModelFromState(state);
 

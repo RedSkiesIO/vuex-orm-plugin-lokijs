@@ -74,6 +74,8 @@ export default class Context {
     Object.keys(this.database.models()).forEach((key) => {
       if(this.loki.getCollection(key) === null) {
         this.loki.addCollection(key);
+      } else {
+        console.log(`we already have a ${key}`);
       }
     });
   };

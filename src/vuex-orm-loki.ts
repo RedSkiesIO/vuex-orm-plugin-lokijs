@@ -10,6 +10,13 @@ import Insert from './actions/Insert'
 import Database from '@vuex-orm/core/lib/database/Database';
 
 /**
+ * defines payload sent to a model dispatch method.
+ */
+export interface dispatchPayload {
+  data: Object;
+};
+
+/**
  * Main class of the plugin. Setups the internal context, Vuex actions and model methods
  */
 export default class VuexORMLoki {
@@ -49,8 +56,23 @@ export default class VuexORMLoki {
 
     const model = context.components.Model.prototype;
 
-    model.$insert = async function () {
-      return this.$dispatch('insert', { id: this.id });
+    model.$insert = function (payload: dispatchPayload) {
+      console.log('model insert trace');
+      console.log(payload);
+      return this.$dispatch('insert', payload);
     };
+    // model.$insert = async function () {
+    //   console.log('model insert trace');
+    //   return this.$dispatch('insert', {
+    //     id: 2,
+    //     title: 'Hello, hell!',
+    //     body: 'im coming for you...',
+    //     author: {
+    //       id: 2,
+    //       name: 'devil',
+    //       email: 'devil@hell.net',
+    //     },
+    //   });
+    // };
   }
 }
