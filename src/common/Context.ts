@@ -51,12 +51,11 @@ export default class Context {
     this.options = options;
     this.components = components;
     this.database = database;
-    console.trace();
     this.loki = new LokiJs('vuex-orm-loki', {
       env: options.env || 'BROWSER',
       verbose: options.verbose || false,
       autoload: options.autoload || true,
-      autoloadCallback: options.autoloadCallback,
+      autoloadCallback: this.autoLoadCallback.bind(this),
       autosave: options.autosave || true,
       autosaveCallback: options.autosaveCallback,
       autosaveInterval: options.autosaveInterval || 1000,
@@ -65,17 +64,34 @@ export default class Context {
       serializationMethod: options.serializationMethod || 'normal',
       throttledSaves: options.throttledSaves || false,
     });
-  }
+  };
+
+  /**
+   * ensures the loki db and vuex-orm state are in sync on load.
+   * @param vuexOrmDb
+   */
+  public autoLoadCallback(err: any) : void {
+    Object.keys(this.database.models()).forEach((key) => {
+      console.log(123);
+      console.log(key);
+    });
+  };
 
   /**
    * This is called only once and creates a new instance of the Context.
    * @param {Components} components The Vuex-ORM Components collection.
    * @param {Database} database The database passed to VuexORM.install.
-   * @param {LokiConstructorOptions} lokiOptions The options passed to new LokiJS instance.
+   * @param {Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>} options The options passed to new LokiJS instance.
    */
   public static setup (components: Components, database: Database, options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>) : Context {
     this.instance = new Context(components, database, options);
+    this.instance.loki.addCollection('testCollection');
     this.instance.loki.saveDatabase((x) => { console.log('im a callback') });
+    // console.log(this.instance.loki.getCollection('testCollection'));
+    // console.log('<!----------------------->');
+    // console.log(this.instance.loki.getCollection('users'));
+    // console.log('<!----------------------->');
+    // console.log(this.instance.loki.listCollections());
     return this.instance;
   }
 

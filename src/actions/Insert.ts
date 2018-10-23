@@ -5,16 +5,21 @@ import Action from './Action';
 // import NameGenerator from '../graphql/name-generator';
 
 /**
- * Fetch action for sending a query. Will be used for Model.fetch().
+ * Insert action for sending a query. Will be used for Model.fetch().
  */
-export default class Fetch extends Action {
+export default class Insert extends Action {
 
   /**
-   * 
-   * @param param0
-   */  
-  public static async call ({ state, dispatch } : any) {
+   * call loki insert
+   * @param state
+   * @param dispatch
+   */
+  public static async call (state: any, dispatch: any) {
     const context = Context.getInstance();
+    console.trace();
+    console.log(state);
+    console.log(dispatch);
+    // context.loki.insert({ lol: true });
     // const model = this.getModelFromState(state);
 
     // Send the request to the GraphQL API

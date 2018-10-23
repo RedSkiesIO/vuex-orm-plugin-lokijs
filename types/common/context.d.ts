@@ -39,15 +39,10 @@ export default class Context {
      */
     private constructor();
     /**
-     * ensures the loki db and vuex-orm state are in sync on load.
-     * @param vuexOrmDb
-     */
-    autoLoadCallback(err: any): void;
-    /**
      * This is called only once and creates a new instance of the Context.
      * @param {Components} components The Vuex-ORM Components collection.
      * @param {Database} database The database passed to VuexORM.install.
-     * @param {Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>} options The options passed to new LokiJS instance.
+     * @param {LokiConstructorOptions} lokiOptions The options passed to new LokiJS instance.
      */
     static setup(components: Components, database: Database, options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>): Context;
     /**

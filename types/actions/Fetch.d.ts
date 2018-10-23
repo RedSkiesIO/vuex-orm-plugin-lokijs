@@ -1,6 +1,6 @@
 import Action from './Action';
 /**
- * Insert action for sending a query. Will be used for Model.fetch().
+ * Fetch action for sending a query. Will be used for Model.fetch().
  */
 export default class Fetch extends Action {
     /**

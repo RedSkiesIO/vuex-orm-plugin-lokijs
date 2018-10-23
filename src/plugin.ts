@@ -23,8 +23,10 @@ export default class VuexORMLokiPlugin implements Plugin {
    * @param {Options} options The options passed to VuexORM.install
    * @returns {VuexORMLokiPlugin}
    */
-  public static install (components: Components, options: VuexORMLokiOptions, ) : VuexORMLokiPlugin {
+  public static install (components: Components, options: VuexORMLokiOptions) : VuexORMLokiPlugin {
     VuexORMLokiPlugin.instance = new VuexORMLoki(components, options.database, options.options);
+    // console.log('trace start');
+    // console.log(VuexORMLokiPlugin.instance);
     return VuexORMLokiPlugin.instance;
   }
 }

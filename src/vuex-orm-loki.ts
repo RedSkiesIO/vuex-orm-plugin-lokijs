@@ -1,12 +1,12 @@
 import { Components } from '@vuex-orm/core/lib/plugins/use';
 import Context from './common/Context';
 import Action from './actions/Action'
-import Fetch from './actions/Fetch'
+import Insert from './actions/Insert'
 // import Get from './actions/Get'
 // import Create from './actions/Create'
 // import Update from './actions/Update'
 // import Delete from './actions/Delete'
-import { map } from 'lodash-es';
+// import { map } from 'lodash-es';
 import Database from '@vuex-orm/core/lib/database/Database';
 
 /**
@@ -37,7 +37,7 @@ export default class VuexORMLoki {
   private static setupActionsMethods() {
     const context = Context.getInstance();
 
-    context.components.Actions.$fetching = Fetch.call.bind(Fetch);
+    context.components.Actions.$insert = Insert.call.bind(Insert);
     // context.components.Actions.$get = Get.call.bind(Get);
     // context.components.Actions.$create = Create.call.bind(Create);
     // context.components.Actions.$update = Update.call.bind(Update);
@@ -49,8 +49,8 @@ export default class VuexORMLoki {
 
     const model = context.components.Model.prototype;
 
-    model.$destroy = async function () {
-      return this.$dispatch('fetch', { id: this.id });
+    model.$insert = async function () {
+      return this.$dispatch('insert', { id: this.id });
     };
   }
 }

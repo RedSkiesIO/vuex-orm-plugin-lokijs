@@ -16,7 +16,6 @@ module.exports = {
   rules: {
     'object-curly-spacing': ['error', 'always'],
     'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 1 }],
-    // https://github.com/eslint/typescript-eslint-parser#known-issues
     'no-undef': 'off',
     'no-unused-vars': 'off'
   }
