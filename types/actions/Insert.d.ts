@@ -8,5 +8,5 @@ export default class Insert extends Action {
      * @param state
      * @param dispatch
      */
-    static call(state: any, dispatch: any): Promise<void>;
+    static call(state: any, dispatch: any): Promise<Object>;
 }

@@ -64,6 +64,7 @@ export default class Context {
       serializationMethod: options.serializationMethod || 'normal',
       throttledSaves: options.throttledSaves || false,
     });
+    this.loki.loadDatabase();
   };
 
   /**
@@ -88,13 +89,6 @@ export default class Context {
    */
   public static setup (components: Components, database: Database, options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>) : Context {
     this.instance = new Context(components, database, options);
-    // this.instance.loki.addCollection('testCollection');
-    // this.instance.loki.saveDatabase((x) => { console.log('im a callback') });
-    // console.log(this.instance.loki.getCollection('testCollection'));
-    // console.log('<!----------------------->');
-    // console.log(this.instance.loki.getCollection('users'));
-    // console.log('<!----------------------->');
-    // console.log(this.instance.loki.listCollections());
     return this.instance;
   }
 

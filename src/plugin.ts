@@ -22,8 +22,6 @@ export default class VuexORMLokiPlugin implements Plugin {
    */
   public static install (components: Components, options: VuexORMLokiOptions) : VuexORMLokiPlugin {
     VuexORMLokiPlugin.instance = new VuexORMLoki(components, options.database, options.options);
-    // console.log('trace start');
-    // console.log(VuexORMLokiPlugin.instance);
     return VuexORMLokiPlugin.instance;
   }
 }

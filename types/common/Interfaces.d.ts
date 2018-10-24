@@ -1,6 +1,18 @@
+import { Components } from '@vuex-orm/core/lib/plugins/use';
 import Database from '@vuex-orm/core/lib/database/Database';
 import RootState from '@vuex-orm/core/lib/modules/contracts/RootState';
+import Context from './Context';
 export declare type DispatchFunction = (action: string, data: Data) => Promise<any>;
+/**
+ * Defines contxt singleton interface.
+ */
+export interface ContextInterface {
+    instance: Context;
+    components: Components;
+    options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>;
+    database: Database;
+    loki: Loki;
+}
 /**
  * defines options passed to new plugin-lokijs.
  */

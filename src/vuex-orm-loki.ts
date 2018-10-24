@@ -51,22 +51,7 @@ export default class VuexORMLoki {
     const model = context.components.Model.prototype;
 
     model.$insert = function (payload: dispatchPayload) {
-      console.log('model insert trace');
-      console.log(payload);
       return this.$dispatch('insert', payload);
     };
-    // model.$insert = async function () {
-    //   console.log('model insert trace');
-    //   return this.$dispatch('insert', {
-    //     id: 2,
-    //     title: 'Hello, hell!',
-    //     body: 'im coming for you...',
-    //     author: {
-    //       id: 2,
-    //       name: 'devil',
-    //       email: 'devil@hell.net',
-    //     },
-    //   });
-    // };
   }
 }
