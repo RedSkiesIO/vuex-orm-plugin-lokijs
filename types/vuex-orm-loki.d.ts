@@ -2,12 +2,6 @@ import { Components } from '@vuex-orm/core/lib/plugins/use';
 import Context from './common/Context';
 import Database from '@vuex-orm/core/lib/database/Database';
 /**
- * defines payload sent to a model dispatch method.
- */
-export interface dispatchPayload {
-    data: Object;
-}
-/**
  * Main class of the plugin. Setups the internal context, Vuex actions and model methods
  */
 export default class VuexORMLoki {

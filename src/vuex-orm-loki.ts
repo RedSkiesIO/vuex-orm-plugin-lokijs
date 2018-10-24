@@ -8,13 +8,7 @@ import Insert from './actions/Insert'
 // import Delete from './actions/Delete'
 // import { map } from 'lodash-es';
 import Database from '@vuex-orm/core/lib/database/Database';
-
-/**
- * defines payload sent to a model dispatch method.
- */
-export interface dispatchPayload {
-  data: Object;
-};
+import { dispatchPayload } from './common/Interfaces';
 
 /**
  * Main class of the plugin. Setups the internal context, Vuex actions and model methods

@@ -1,11 +1,8 @@
 import VuexORMLoki from './vuex-orm-loki';
 import { Components, Plugin } from '@vuex-orm/core/lib/plugins/use';
 import Database from '@vuex-orm/core/lib/database/Database';
+import { VuexORMLokiOptions } from './common/Interfaces';
 
-interface VuexORMLokiOptions {
-  database: Database,
-  options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>
-}
 /**
  * Plugin class. This just provides a static install method for Vuex-ORM and stores the instance of the model
  * within this.instance.
