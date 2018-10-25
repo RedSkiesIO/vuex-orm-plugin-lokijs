@@ -25,11 +25,18 @@ export interface VuexORMLokiOptions {
 }
 
 /**
- * defines payload sent to a model dispatch method.
+ * defines payload sent to a insert dispatch method.
  */
-export interface dispatchPayload {
+export interface dispatchInsertPayload {
   data: Object;
 };
+
+/**
+ * defines payload sent to a get dispatch method.
+ */
+export interface dispatchGetPayload {
+  id: Number;
+}
 
 /**
  * defines action parameters object.
@@ -49,6 +56,13 @@ export interface ActionParams {
   query?: string;
   multiple?: boolean;
   name?: string;
+}
+
+/**
+ * defines interface
+ */
+export interface insertDocCollection {
+  [key: string]: Array<Object>;
 }
 
 /**
