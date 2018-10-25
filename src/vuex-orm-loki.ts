@@ -38,8 +38,8 @@ export default class VuexORMLoki {
   private static setupActionsMethods() {
     const context = Context.getInstance();
 
-    context.components.Actions.$insert = Insert.call.bind(Insert);
-    context.components.Actions.$get = Get.call.bind(Get);
+    context.components.Actions.$create = Insert.call.bind(Insert);
+    context.components.Actions.$find = Get.call.bind(Get);
     // context.components.Actions.$create = Create.call.bind(Create);
     // context.components.Actions.$update = Update.call.bind(Update);
     // context.components.Actions.$delete = Delete.call.bind(Delete);

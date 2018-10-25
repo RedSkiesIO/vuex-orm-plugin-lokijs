@@ -16,6 +16,7 @@ export interface ContextInterface {
   database: Database;
   loki: Loki;
 }
+
 /**
  * defines options passed to new plugin-lokijs.
  */
