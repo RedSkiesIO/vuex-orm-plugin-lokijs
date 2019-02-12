@@ -1,7 +1,7 @@
 
 import { find } from 'lodash-es';
 import { Components } from '@vuex-orm/core/lib/plugins/use';
-import LokiJs from 'lokijs';
+import * as LokiJs from 'lokijs';
 import Database from '@vuex-orm/core/lib/database/Database';
 
 /**
@@ -48,6 +48,8 @@ export default class Context {
    * @param {LokiConstructorOptions} lokiOptions The options passed to new LokiJS instance.
    */
   private constructor (components: Components, database: Database, options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>) {
+
+
     this.options = options;
     this.components = components;
     this.database = database;
@@ -73,10 +75,26 @@ export default class Context {
    */
   public autoLoadCallback(err: any) : void {
     Object.keys(this.database.models()).forEach((key) => {
-      if(this.loki.getCollection(key) === null) {
-        this.loki.addCollection(key);
+      if(this.loki.getCollection(this.database.models()[key].name) === null) {
+        this.loki.addCollection(this.database.models()[key].name);
       };
     });
+
+    Object.keys(this.database.models()).forEach((key) => {
+      const lokiData = this.loki.getCollection(this.database.models()[key].name).data;
+      const model = this.database.models()[key];
+
+      lokiData.forEach((item) => {
+        model.insert({data: item});
+      });
+    });
+
+    if (this.options.hydrationCompletedCallback) {
+      this.options.hydrationCompletedCallback();
+    }
+
+    // @todo remove the line below, for development purposes only
+    window.loki = this.loki;
   };
 
   /**
