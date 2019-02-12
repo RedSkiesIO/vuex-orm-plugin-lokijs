@@ -7,6 +7,9 @@ import Get from './actions/Get'
 // import Update from './actions/Update'
 // import Delete from './actions/Delete'
 // import { map } from 'lodash-es';
+
+import modelMethods from './methods/model';
+
 import Database from '@vuex-orm/core/lib/database/Database';
 import { dispatchInsertPayload } from './common/Interfaces';
 
@@ -47,11 +50,18 @@ export default class VuexORMLoki {
 
   private static setupModelMethods() {
     const context = Context.getInstance();
+    const model = context.components.Model;
 
-    const model = context.components.Model.prototype;
+    const {
+      $insert,
+      $update,
+      $delete,
+      $find,
+    } = modelMethods;
 
-    model.$insert = function (payload: dispatchInsertPayload) {
-      return this.$dispatch('insert', payload);
-    };
+    model.$insert = $insert(context);
+    model.$update = $update(context);
+    model.$delete = $delete(context);
+    model.$find = $find(context);
   }
 }
