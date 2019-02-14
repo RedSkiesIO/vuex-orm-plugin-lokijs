@@ -1,7 +1,7 @@
 # vuex-orm-lokijs
 
 
-[![npm](https://img.shields.io/npm/v/vuex-orm-lokijs.svg)](https://www.npmjs.com/package/vuex-orm-lokijs)
+[![npm](https://img.shields.io/npm/v/vuex-orm-lokijs.svg)](https://www.npmjs.com/package/@atlascity/vuex-orm-plugin-lokis)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 vuex-orm LokiJS persistance plugin.
