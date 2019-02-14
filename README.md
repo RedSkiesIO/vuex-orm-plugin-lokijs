@@ -1,19 +1,19 @@
-# vuex-orm-lokijs
+# vuex-orm-plugin-loki
 
 
-[![npm](https://img.shields.io/npm/v/vuex-orm-lokijs.svg)](https://www.npmjs.com/package/@atlascity/vuex-orm-plugin-lokis)
+[![npm](https://img.shields.io/npm/v/vuex-orm-plugin-loki.svg)](https://www.npmjs.com/package/@atlascity/vuex-orm-plugin-lokis)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
 vuex-orm LokiJS persistance plugin.
 
 ## :scroll: Changelog
-Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nsh-core/vuex-orm-lokijs/blob/develop/CHANGELOG.md).
+Details changes for each release are documented in the [CHANGELOG.md](https://github.com/atlascity/vuex-orm-plugin-loki/blob/develop/CHANGELOG.md).
 
 ## :exclamation: Issues
-Please make sure to read the [Issue Reporting Checklist](https://github.com/nsh-core/vuex-orm-lokijs/blob/develop/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+Please make sure to read the [Issue Reporting Checklist](https://github.com/atlascity/vuex-orm-plugin-loki/blob/develop/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 ## :muscle: Contribution
-Please make sure to read the [Contributing Guide](https://github.com/nsh-core/vuex-orm-lokijs/blob/develop/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/atlascity/vuex-orm-plugin-loki/blob/develop/CONTRIBUTING.md) before making a pull request.
 
 ## Contributors
 Here are the wonderfull soles who contribute to this project

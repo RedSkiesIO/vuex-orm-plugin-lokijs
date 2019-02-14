@@ -68,18 +68,18 @@
     "webpack-dev-server": "^3.1.8"
   },
   "files": [
-    "dist/vuex-orm-lokijs.js",
-    "dist/vuex-orm-lokijs.min.js",
-    "dist/vuex-orm-lokijs.common.js",
-    "dist/vuex-orm-lokijs.esm.js",
+    "dist/vuex-orm-plugin-loki.js",
+    "dist/vuex-orm-plugin-loki.min.js",
+    "dist/vuex-orm-plugin-loki.common.js",
+    "dist/vuex-orm-plugin-loki.esm.js",
     "types",
     "src",
     "lib"
   ],
   "homepage": "https://github.com/atlascity/vuex-orm-plugin-loki",
-  "main": "dist/vuex-orm-lokijs.common.js",
-  "module": "dist/vuex-orm-lokijs.esm.js",
-  "unpkg": "dist/vuex-orm-lokijs.js",
+  "main": "dist/vuex-orm-plugin-loki.common.js",
+  "module": "dist/vuex-orm-plugin-loki.esm.js",
+  "unpkg": "dist/vuex-orm-plugin-loki.js",
   "types": "types/index.d.ts",
   "keywords": [
     "plugin",
