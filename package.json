@@ -1,11 +1,8 @@
 {
-  "name": "vuex-orm-lokijs",
+  "name": "@atlascity/vuex-orm-plugin-lokis",
   "description": "vuex-orm LokiJS persistance plugin.",
   "version": "0.0.1",
-  "author": {
-    "name": "James Kirkby",
-    "email": "nshcore@protonmail.ch"
-  },
+  "author": "James Kirkby <nshcore@protonmail.com>",
   "bugs": {
     "url": "https://github.com/atlascity/vuex-orm-plugin-loki/issues"
   },
@@ -95,7 +92,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:atlascity/vuex-orm-plugin-loki.git"
+    "url": "git+ssh://git@github.com/atlascity/vuex-orm-plugin-loki.git"
   },
   "scripts": {
     "build": "npm run build:ts && node config/build.js",
@@ -113,5 +110,9 @@
     "test:unit": "cross-env BABEL_ENV=test karma start config/karma.unit.conf.js",
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }
