@@ -1,0 +1,25 @@
+{
+  "projectName": "community",
+  "projectOwner": "nshCore",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "nshCore",
+      "name": "nshCore",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/21375475?v=4",
+      "profile": "https://hub.docker.com/u/jkirkby91",
+      "contributions": [
+        "code",
+        "example",
+        "ideas",
+        "infra",
+        "plugin"
+      ]
+    }
+  ],
+  "repoType": "github"
+}
