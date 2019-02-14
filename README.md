@@ -20,8 +20,8 @@ Here are the wonderfull soles who contribute to this project
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/21375475?v=4" width="100px;"/><br /><sub><b>nshCore</b></sub>](https://hub.docker.com/u/jkirkby91)<br />[💻](https://github.com/nshCore/community/commits?author=nshCore "Code") [💡](#example-nshCore "Examples") [🤔](#ideas-nshCore "Ideas, Planning, & Feedback") [🚇](#infra-nshCore "Infrastructure (Hosting, Build-Tools, etc)") [🔌](#plugin-nshCore "Plugin/utility libraries") |
-| :---: |
+| [<img src="https://avatars2.githubusercontent.com/u/21375475?v=4" width="100px;"/><br /><sub><b>nshCore</b></sub>](https://hub.docker.com/u/jkirkby91)<br />[💻](https://github.com/nshCore/community/commits?author=nshCore "Code") [💡](#example-nshCore "Examples") [🤔](#ideas-nshCore "Ideas, Planning, & Feedback") [🚇](#infra-nshCore "Infrastructure (Hosting, Build-Tools, etc)") [🔌](#plugin-nshCore "Plugin/utility libraries") | [<img src="https://avatars1.githubusercontent.com/u/5569649?v=4" width="100px;"/><br /><sub><b>Konrad Moskal</b></sub>](https://github.com/dufia)<br />[💻](https://github.com/nshCore/community/commits?author=dufia "Code") [🤔](#ideas-dufia "Ideas, Planning, & Feedback") [👀](#review-dufia "Reviewed Pull Requests") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## :copyright: License
