@@ -4,10 +4,14 @@
   "version": "0.0.1",
   "author": {
     "name": "James Kirkby",
-    "email": "jkirkby@protonmail.ch"
+    "email": "nshcore@protonmail.ch"
   },
+  "contributors": [{
+    "name" : "Konrad Moskal",
+    "email" : "konrad.moskal@atlascity.io"
+  }],
   "bugs": {
-    "url": "https://github.com/nsh-core/vuex-orm-lokijs/issues"
+    "url": "https://github.com/atlascity/vuex-orm-lokijs/issues"
   },
   "dependencies": {
     "@vuex-orm/core": "^0.27.0",
