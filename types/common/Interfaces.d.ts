@@ -1,3 +1,4 @@
+/// <reference types="lokijs" />
 import { Components } from '@vuex-orm/core/lib/plugins/use';
 import Database from '@vuex-orm/core/lib/database/Database';
 import RootState from '@vuex-orm/core/lib/modules/contracts/RootState';
@@ -19,6 +20,7 @@ export interface ContextInterface {
 export interface VuexORMLokiOptions {
     database: Database;
     options: Partial<LokiConstructorOptions> & Partial<LokiConfigOptions> & Partial<ThrottledSaveDrainOptions>;
+    hydrationCompletedCallback: any;
 }
 /**
  * defines payload sent to a insert dispatch method.

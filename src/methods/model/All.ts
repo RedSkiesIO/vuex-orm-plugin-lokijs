@@ -13,14 +13,12 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with vuex-orm-plugin-lokijs.  If not, see <http://www.gnu.org/licenses/>.
-var $find = function (context) {
-    return function (payload) {
-        var collectionName = this.name;
-        var collection = context.loki.getCollection(collectionName);
-        var data = {};
-        data[this.localKey()] = payload;
-        return collection.find(data);
-    };
-};
-export default $find;
-//# sourceMappingURL=Find.js.map
+
+const $All: any = function (context: any) {
+  return function (this: any, payload: any) {
+    const collectionName = this.name
+    const collection = context.loki.getCollection(collectionName)
+    return collection.find()
+  }
+}
+export default $All

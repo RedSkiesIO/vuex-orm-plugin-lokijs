@@ -1,2 +1,2 @@
-declare const $delete: (context: any) => (payload: any) => Promise<void>;
+declare const $delete: any;
 export default $delete;

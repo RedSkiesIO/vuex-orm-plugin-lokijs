@@ -1,2 +1,2 @@
-declare const $insert: (context: any) => (payload: any) => Promise<any>;
+declare const $insert: any;
 export default $insert;

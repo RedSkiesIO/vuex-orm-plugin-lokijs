@@ -1,6 +1,8 @@
 declare const _default: {
-    $insert: (context: any) => (payload: any) => Promise<any>;
-    $update: (context: any) => (payload: any) => Promise<void>;
-    $delete: (context: any) => (payload: any) => Promise<void>;
+    $insert: any;
+    $update: any;
+    $delete: any;
+    $find: any;
+    $all: any;
 };
 export default _default;

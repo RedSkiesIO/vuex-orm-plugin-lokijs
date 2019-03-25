@@ -1,2 +1,2 @@
-declare const $update: (context: any) => (payload: any) => Promise<void>;
+declare const $update: any;
 export default $update;
