@@ -189,4 +189,4 @@ Here are the wonderfull soles who contribute to this project
 
 ## :copyright: License
 
-[MIT](http://opensource.org/licenses/MIT)
+[GPL-2.0-only](https://opensource.org/licenses/gpl-2.0.php)
