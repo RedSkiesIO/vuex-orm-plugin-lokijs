@@ -11,11 +11,11 @@ vuex-orm LokiJS persistance (Local Storage) plugin, with optional AES encryption
 `npm install @atlascity/vuex-orm-plugin-lokijs`
 
 ## Why & How
-	* We needed persistent, Local Storage based VuexORM database.
-	* Each time you modify your VuexORM database, the same is going to be applied to the LokiJS database and saved into Local Storage. When you initialize your VuexORM database, the plugin will hydrate VuexORM with data stored in Local Storage (preserving original IDs).
+	* We needed a persistent Local Storage based database.
+	* VuexORM is a ORM tool for Vuex, this plugin adds the ability to use LokiJS as a persistant store. When you initialize your VuexORM database, the plugin will hydrate VuexORM with data stored in Local Storage (preserving original IDs).
 
 ## Caveats
-Only some of VuexORM model methods are currently implemented. There is no support for VuexORM relationships, you have to manage that yourself. Feel free to fork!
+Only some of VuexORM model methods are currently implemented. There is no support for VuexORM relationships, you have to manage that yourself. Feel free to contribute!
 
 ## Examples
 
