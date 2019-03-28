@@ -23,151 +23,152 @@ Only some of VuexORM model methods are currently implemented. There is no suppor
 
 
 ### $insert
-	```js
-	import MyModel from './models/MyModel';
-	const data = { name: 'Bob' };
-	MyModel.$insert({ data }); // insert data using $insert() instead of regular insert()
+```js
+import MyModel from './models/MyModel';
+const data = { name: 'Bob' };
+MyModel.$insert({ data }); // insert data using $insert() instead of regular insert()
 
-	// retrieve data using regular VuexORM query()
-	const bob = MyModel.query().where('name', 'Bob').get();
-	```
-	### $update
-	```js
-	MyModel.$update({
-	  where: record => record.name === 'Bob',
-	  data: { name: 'Bobby' },
-	});
-	```
+// retrieve data using regular VuexORM query()
+const bob = MyModel.query().where('name', 'Bob').get();
+```
+### $update
+```js
+MyModel.$update({
+  where: record => record.name === 'Bob',
+  data: { name: 'Bobby' },
+});
+```
 
 ### $delete
-	```js
-	const bobby = MyModel.query().where('name', 'Bobby').get();
-	MyModel.$delete(bobby.id);
-	```
+```js
+const bobby = MyModel.query().where('name', 'Bobby').get();
+MyModel.$delete(bobby.id);
+```
 
 ### $update
-	```js
-	import MyModel from './models/MyModel';
+```js
+import MyModel from './models/MyModel';
 
-    MyModel.$update({
-      where: (record) => { return record.id === id; },
-      data: { example: 'data' },
-    });
-	```
+MyModel.$update({
+  where: (record) => { return record.id === id; },
+  data: { example: 'data' },
+});
+```
 
 ## Usage
-	```js
-	import Vue from 'vue';
-	import Vuex from 'vuex';
-	import VuexORM from '@vuex-orm/core';
-	import VuexORMLoki from 'vuex-orm-lokijs';
-	import { Model } from '@vuex-orm/core';
+```js
+import Vue from 'vue';
+import Vuex from 'vuex';
+import VuexORM from '@vuex-orm/core';
+import VuexORMLoki from 'vuex-orm-lokijs';
+import { Model } from '@vuex-orm/core';
 
-	// define your VuexORM model
-	class MyModel extends Model {
-	  static entity = 'MyModel';
-	  static fields() {
-	    return {
-	      id: this.increment(),
-	      data: this.attr(''),
-	    };
-	  }
-	}
+// define your VuexORM model
+class MyModel extends Model {
+  static entity = 'MyModel';
+  static fields() {
+    return {
+      id: this.increment(),
+      data: this.attr(''),
+    };
+  }
+}
 
-	Vue.use(Vuex);
-	const database = new VuexORM.Database();
-	database.register(MyModel, {});
+Vue.use(Vuex);
+const database = new VuexORM.Database();
+database.register(MyModel, {});
 
-	const options = {
-	  env: 'browser',
-	};
+const options = {
+  env: 'browser',
+};
 
-	function hydrationCompletedCallback() {
-	  // data from LocalStorage has been fully loaded into VuexORM
-	}
+function hydrationCompletedCallback() {
+  // data from LocalStorage has been fully loaded into VuexORM
+}
 
-	VuexORM.use(VuexORMLoki, { database, options, hydrationCompletedCallback });
+VuexORM.use(VuexORMLoki, { database, options, hydrationCompletedCallback });
 
-	const store = new Vuex.Store({
-	  plugins: [VuexORM.install(database)],
-	});
+const store = new Vuex.Store({
+  plugins: [VuexORM.install(database)],
+});
 
-	```
+```
 
 ## Encryption
 Encryption currently only works on `$insert()`.
 
 ### Setup the model
-	```js
-	import { Model } from '@vuex-orm/core';
+```js
+import { Model } from '@vuex-orm/core';
 
-	export default MyModel extends Model {
-	  static entity = 'MyModel';
-	  static AES = ['secretProperty1', 'secretProperty2']; // tell the plugin what to encrypt
+export default MyModel extends Model {
+  static entity = 'MyModel';
+  static AES = ['secretProperty1', 'secretProperty2']; // tell the plugin what to encrypt
 
-	  static fields() {
-	    return {
-	      id: this.increment(),
-	      name: this.attr(),
-	      secretProperty1: this.attr(),
-	      secretProperty2: this.attr(),
-	    };
-	  }
-	}
-	```
+  static fields() {
+    return {
+      id: this.increment(),
+      name: this.attr(),
+      secretProperty1: this.attr(),
+      secretProperty2: this.attr(),
+    };
+  }
+}
+```
+
 ### Insert data with password
-	```js
-	import MyModel from './models/MyModel';
-	const data = {
-	  name: 'Bob',
-	  secretProperty1: 'Very sensitive data',
-	  secretProperty2: 'Even more',
-	};
+```js
+import MyModel from './models/MyModel';
+const data = {
+  name: 'Bob',
+  secretProperty1: 'Very sensitive data',
+  secretProperty2: 'Even more',
+};
 
-	const password = "your password";
+const password = "your password";
 
-	/*
-	 * before being put into the database, the data
-	 * will be encrypted with AES using the password
-	 */
-	MyModel.$insert({ data, password }); // pass the password
-	```
+/*
+ * before being put into the database, the data
+ * will be encrypted with AES using the password
+ */
+MyModel.$insert({ data, password }); // pass the password
+```
 
 ### Update data with password
-	```js
-	import MyModel from './models/MyModel';
-	const data = {
-	  name: 'Bob',
-	  secretProperty1: 'Very sensitive data',
-	  secretProperty2: 'Even more',
-	};
+```js
+import MyModel from './models/MyModel';
+const data = {
+  name: 'Bob',
+  secretProperty1: 'Very sensitive data',
+  secretProperty2: 'Even more',
+};
 
-	const password = "your password";
+const password = "your password";
 
-	/*
-	 * before being put into the database, the data
-	 * will be encrypted with AES using the password
-	 */
-	MyModel.$update({ data, password }); // pass the password
-	```
+/*
+ * before being put into the database, the data
+ * will be encrypted with AES using the password
+ */
+MyModel.$update({ data, password }); // pass the password
+```
 
 ### Retrieve data and decrypt
-	```js
-	import AES from 'crypto-js/aes';
-	import encUTF8 from 'crypto-js/enc-utf8';
-	import MyModel from './models/MyModel';
+```js
+import AES from 'crypto-js/aes';
+import encUTF8 from 'crypto-js/enc-utf8';
+import MyModel from './models/MyModel';
 
-	function decrypt(data, password) {
-	  const bytes = AES.decrypt(data, password);
-	  return JSON.parse(bytes.toString(encUTF8));
-	}
+function decrypt(data, password) {
+  const bytes = AES.decrypt(data, password);
+  return JSON.parse(bytes.toString(encUTF8));
+}
 
-	const bob = MyModel.query().where('name', 'Bob').get();
+const bob = MyModel.query().where('name', 'Bob').get();
 
-	MyModel.AES.forEach((key) => {
-	  bob[key] = decrypt(bob[key], password);
-	});
-	```
+MyModel.AES.forEach((key) => {
+  bob[key] = decrypt(bob[key], password);
+});
+```
 
 ## :scroll: Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/atlascity/vuex-orm-plugin-loki/blob/develop/CHANGELOG.md).
